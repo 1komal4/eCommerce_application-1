@@ -2,6 +2,7 @@ import 'package:ecommerce_application/consts/consts.dart';
 import 'package:ecommerce_application/widget_common/applogo.dart';
 import 'package:ecommerce_application/widget_common/bg_widget.dart';
 import 'package:ecommerce_application/widget_common/custom_textfield.dart';
+import 'package:ecommerce_application/widget_common/our_button.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -22,7 +23,15 @@ class LoginScreen extends StatelessWidget {
               children: [
                 customTextFeild(email, emailHint),
                 customTextFeild(password, passwordhint),
-                TextButton(onPressed: () {}, child: forgetPass.text.make())
+                Align(
+                  alignment: Alignment.centerRight,
+                    child: TextButton(onPressed: () {}, child: forgetPass.text.make())),
+                5.heightBox,
+                //ourButton().box.width(context.screenWidth -50).make(),
+                ourButton(color: Colors.red,
+                    title: login,
+                    textColor: Colors.white,
+                    onPress: (){}).box.width(context.screenWidth - 50).make(),
               ],
             )
                 .box
